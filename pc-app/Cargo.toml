@@ -4,3 +4,10 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+clap = { version = "4.5.47", features = ["derive"] }
+embedded-io-async = "0.6.1"
+ergot = { version = "0.10.0", features = ["embedded-io-async-v0_6"] }
+tokio = { version = "1.47.1", features = ["full"] }
+tokio-serial = "5.4.5"
+bbq2 = "0.4.2"
+critical-section = { version = "1.2.0", features = ["std"] }
