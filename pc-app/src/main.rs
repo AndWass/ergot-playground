@@ -13,6 +13,8 @@ use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use tokio::join;
 use tokio_serial::SerialPortBuilderExt;
 
+use critical_section as _;
+
 #[derive(clap::Parser, Debug)]
 struct Args {
     #[clap(short, long)]
