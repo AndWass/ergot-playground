@@ -58,11 +58,13 @@ impl embedded_io_async::Write for Tx {
 #[tokio::main]
 async fn main() {
     let args = Args::parse();
+    env_logger::init();
 
     let serial = tokio_serial::new(args.serial, 115200).open_native_async().unwrap();
     let (rx, tx) = tokio::io::split(serial);
 
     let mut rx = RxWorker::new(&STACK, Rx(rx), ());
+    rx.set_controller(true);
     let mut frame_rx_buffer = [0u8; 256];
     let mut frame_scratch = [0u8; 256];
     /*tokio::spawn(ping_handler());

@@ -16,3 +16,6 @@ embassy-time = "0.5.0"
 embedded-hal-async = "1.0.0"
 ergot = { version = "0.10.0", features = ["embedded-io-async-v0_6"] }
 panic-probe = { version = "1.0.0", features = ["print-defmt"] }
+
+[profile.release]
+debug = 2

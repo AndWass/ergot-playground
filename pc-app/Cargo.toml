@@ -11,3 +11,7 @@ tokio = { version = "1.47.1", features = ["full"] }
 tokio-serial = "5.4.5"
 bbq2 = "0.4.2"
 critical-section = { version = "1.2.0", features = ["std"] }
+env_logger = "0.11.8"
+
+[patch.crates-io]
+ergot = { git = "https://github.com/jamesmunns/ergot", rev = "1afef926569e68358eb8f74bd2f2319f50a7cbb9"}
